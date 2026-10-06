@@ -1,0 +1,13 @@
+<div class="order">
+  <header>
+    <h1>Order <%= @order.number %></h1>
+    <p class="placed-at">Placed <%= @order.created_at.to_date %></p>
+  </header>
+
+  <section class="shipping">
+    <p class="address"><%= @order.shipment.address_line %></p>
+  </section>
+</div>
+
+<h2><%= @recipient %></h2>
+<p class="note">Questions about this order? Reply to the confirmation email.</p>
