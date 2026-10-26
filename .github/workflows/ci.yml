@@ -1,0 +1,18 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Reads the version from .ruby-version.
+      - uses: ruby/setup-ruby@v1
+      - run: bundle install
+      - run: bundle exec rake test
